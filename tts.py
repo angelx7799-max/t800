@@ -9,5 +9,5 @@ def say(text):
     with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as fp:
         tts.save(fp.name)
         print(f"Reproduciendo: {fp.name}")
-        subprocess.run(["mpg123", fp.name])
+        subprocess.run(["termux-media-player", "play", fp.name])
         os.remove(fp.name)
